@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220645FA1D2F84DB001D1F4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */; };
 		2258150F1D2F274B00F926E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258150E1D2F274B00F926E4 /* AppDelegate.swift */; };
 		225815111D2F274B00F926E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225815101D2F274B00F926E4 /* ViewController.swift */; };
 		225815141D2F274B00F926E4 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225815121D2F274B00F926E4 /* SignIn.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FeedMe/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2258150B1D2F274B00F926E4 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258150E1D2F274B00F926E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225815101D2F274B00F926E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		225815021D2F274A00F926E4 = {
 			isa = PBXGroup;
 			children = (
+				220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */,
 				2258150D1D2F274B00F926E4 /* FeedMe */,
 				2258150C1D2F274B00F926E4 /* Products */,
 				4AA77FA675C019A418E845BF /* Pods */,
@@ -212,6 +215,7 @@
 			files = (
 				225815191D2F274B00F926E4 /* LaunchScreen.storyboard in Resources */,
 				225815161D2F274B00F926E4 /* Assets.xcassets in Resources */,
+				220645FA1D2F84DB001D1F4C /* GoogleService-Info.plist in Resources */,
 				225815141D2F274B00F926E4 /* SignIn.storyboard in Resources */,
 				22DB41961D2F5C70002B6A8D /* Main.storyboard in Resources */,
 			);
