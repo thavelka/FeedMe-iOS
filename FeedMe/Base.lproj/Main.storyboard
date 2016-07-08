@@ -360,8 +360,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dqK-ls-LTI" kind="relationship" relationship="viewControllers" id="I5r-Uw-oPs"/>
-                        <segue destination="Ocm-Vx-BS0" kind="relationship" relationship="viewControllers" id="aCF-By-dFn"/>
+                        <segue destination="dqK-ls-LTI" kind="relationship" relationship="viewControllers" id="hNK-Zs-vl0"/>
+                        <segue destination="Ocm-Vx-BS0" kind="relationship" relationship="viewControllers" id="CMY-Ul-uUB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAf-Pn-wQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
