@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>119532719857-3gjnh0kd47n4v4e1ac3rmh9t7br4itkm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.119532719857-3gjnh0kd47n4v4e1ac3rmh9t7br4itkm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCncIasehct027mJAnPdt0osbk_7tuOQao</string>
+	<key>GCM_SENDER_ID</key>
+	<string>119532719857</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.thavelka.FeedMe</string>
+	<key>PROJECT_ID</key>
+	<string>feedme-694a2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>feedme-694a2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:119532719857:ios:858be1bbffe7ceff</string>
+	<key>DATABASE_URL</key>
+	<string>https://feedme-694a2.firebaseio.com</string>
+</dict>
+</plist>
