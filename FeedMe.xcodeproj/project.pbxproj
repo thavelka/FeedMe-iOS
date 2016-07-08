@@ -15,7 +15,7 @@
 		225815191D2F274B00F926E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225815171D2F274B00F926E4 /* LaunchScreen.storyboard */; };
 		22852DA11D2F572300AEAF46 /* DispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22852DA01D2F572300AEAF46 /* DispatchViewController.swift */; };
 		22DB41961D2F5C70002B6A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DB41941D2F5C70002B6A8D /* Main.storyboard */; };
-		22DB41981D2F5F35002B6A8D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41971D2F5F35002B6A8D /* MainViewController.swift */; };
+		22DB41981D2F5F35002B6A8D /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */; };
 		22DB419C1D2F605A002B6A8D /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB419B1D2F605A002B6A8D /* ListingCell.swift */; };
 		4F794DA81FD435969A5D0FF3 /* Pods_FeedMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CE8F3F21854C1EA3B21F9B /* Pods_FeedMe.framework */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		2258151A1D2F274B00F926E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22852DA01D2F572300AEAF46 /* DispatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchViewController.swift; path = ViewControllers/DispatchViewController.swift; sourceTree = "<group>"; };
 		22DB41951D2F5C70002B6A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22DB41971D2F5F35002B6A8D /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
+		22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsViewController.swift; path = ViewControllers/ListingsViewController.swift; sourceTree = "<group>"; };
 		22DB419B1D2F605A002B6A8D /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = Views/Cells/ListingCell.swift; sourceTree = "<group>"; };
 		81F2ABA27DB84E290E523C91 /* Pods-FeedMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeedMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-FeedMe/Pods-FeedMe.release.xcconfig"; sourceTree = "<group>"; };
 		C5FFCFBA467EC7213BF2375C /* Pods-FeedMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeedMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FeedMe/Pods-FeedMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				22852DA01D2F572300AEAF46 /* DispatchViewController.swift */,
-				22DB41971D2F5F35002B6A8D /* MainViewController.swift */,
+				22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 				2258150F1D2F274B00F926E4 /* AppDelegate.swift in Sources */,
 				22DB419C1D2F605A002B6A8D /* ListingCell.swift in Sources */,
 				22852DA11D2F572300AEAF46 /* DispatchViewController.swift in Sources */,
-				22DB41981D2F5F35002B6A8D /* MainViewController.swift in Sources */,
+				22DB41981D2F5F35002B6A8D /* ListingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

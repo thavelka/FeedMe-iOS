@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ListingsViewController.swift
 //  FeedMe
 //
 //  Created by Tim Havelka on 7/7/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+class ListingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
