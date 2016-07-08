@@ -7,4 +7,7 @@ target 'FeedMe' do
 
   # Pods for FeedMe
   pod 'Firebase'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI'
 end

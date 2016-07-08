@@ -12,14 +12,16 @@ class Place: NSObject {
     var uid: String
     var name: String
     var address: String
+    var city: String
     
-    init(uid: String, name: String, address: String) {
+    init(uid: String, name: String, address: String, city: String) {
         self.uid = uid
         self.name = name
         self.address = address
+        self.city = city
     }
     
     convenience override init() {
-        self.init(uid: "", name: "", address: "")
+        self.init(uid: "", name: "", address: "", city: "")
     }
 }

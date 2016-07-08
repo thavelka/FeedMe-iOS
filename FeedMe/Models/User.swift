@@ -11,6 +11,7 @@ import Foundation
 class User: NSObject {
     var name: String
     var city: String
+    var favorites: [String: Bool]?
     
     init(name: String, city: String) {
         self.name = name

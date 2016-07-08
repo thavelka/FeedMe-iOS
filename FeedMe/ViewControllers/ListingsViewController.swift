@@ -25,10 +25,7 @@ class ListingsViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        for i in 1...10 {
-            let listing = Listing(uid: "", place: "Location \(i)", address: "123 Test Street - Houston, TX", description: "Half off \(state == .Food ? "burgers" : "drinks") from 3-6 PM.")
-            listings.append(listing)
-        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,12 +50,11 @@ extension ListingsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ListingCell", forIndexPath: indexPath) as! ListingCell
-        cell.configure(listings[indexPath.row])
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listings.count
+        return 0
     }
 }
 

@@ -27,9 +27,9 @@ class ListingCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configure(listing: Listing) {
-        self.placeName.text = listing.placeName
-        self.placeAddress.text = listing.placeAddress
+    func configure(place: Place, listing: Listing) {
+        self.placeName.text = place.name
+        self.placeAddress.text = place.address
         self.listingDescription.text = listing.listingDescription
     }
 }

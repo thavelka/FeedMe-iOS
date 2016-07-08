@@ -10,8 +10,9 @@
 		220645FA1D2F84DB001D1F4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */; };
 		220645FD1D2F93E1001D1F4C /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220645FC1D2F93E1001D1F4C /* Listing.swift */; };
 		220645FF1D2F99AD001D1F4C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220645FE1D2F99AD001D1F4C /* TabBarController.swift */; };
-		220EC2D51D2FB11F0003D129 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220EC2D41D2FB11F0003D129 /* User.swift */; };
-		220EC2D71D2FB3E40003D129 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220EC2D61D2FB3E40003D129 /* Place.swift */; };
+		220EC2D91D2FBAE00003D129 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220EC2D81D2FBAE00003D129 /* City.swift */; };
+		220EC2DB1D2FBB6C0003D129 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220EC2DA1D2FBB6C0003D129 /* Place.swift */; };
+		220EC2DD1D2FBB7C0003D129 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220EC2DC1D2FBB7C0003D129 /* User.swift */; };
 		2258150F1D2F274B00F926E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258150E1D2F274B00F926E4 /* AppDelegate.swift */; };
 		225815141D2F274B00F926E4 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225815121D2F274B00F926E4 /* SignIn.storyboard */; };
 		225815161D2F274B00F926E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225815151D2F274B00F926E4 /* Assets.xcassets */; };
@@ -27,8 +28,9 @@
 		220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FeedMe/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		220645FC1D2F93E1001D1F4C /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listing.swift; path = Models/Listing.swift; sourceTree = "<group>"; };
 		220645FE1D2F99AD001D1F4C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
-		220EC2D41D2FB11F0003D129 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		220EC2D61D2FB3E40003D129 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		220EC2D81D2FBAE00003D129 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Models/City.swift; sourceTree = "<group>"; };
+		220EC2DA1D2FBB6C0003D129 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Place.swift; path = Models/Place.swift; sourceTree = "<group>"; };
+		220EC2DC1D2FBB7C0003D129 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		2258150B1D2F274B00F926E4 /* FeedMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258150E1D2F274B00F926E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		225815131D2F274B00F926E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
@@ -101,9 +103,10 @@
 		22852D9D1D2F567E00AEAF46 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				220EC2DC1D2FBB7C0003D129 /* User.swift */,
 				220645FC1D2F93E1001D1F4C /* Listing.swift */,
-				220EC2D41D2FB11F0003D129 /* User.swift */,
-				220EC2D61D2FB3E40003D129 /* Place.swift */,
+				220EC2DA1D2FBB6C0003D129 /* Place.swift */,
+				220EC2D81D2FBAE00003D129 /* City.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -295,12 +298,13 @@
 			files = (
 				2258150F1D2F274B00F926E4 /* AppDelegate.swift in Sources */,
 				22DB419C1D2F605A002B6A8D /* ListingCell.swift in Sources */,
+				220EC2D91D2FBAE00003D129 /* City.swift in Sources */,
 				220645FD1D2F93E1001D1F4C /* Listing.swift in Sources */,
-				220EC2D71D2FB3E40003D129 /* Place.swift in Sources */,
 				220645FF1D2F99AD001D1F4C /* TabBarController.swift in Sources */,
 				22852DA11D2F572300AEAF46 /* DispatchViewController.swift in Sources */,
 				22DB41981D2F5F35002B6A8D /* ListingsViewController.swift in Sources */,
-				220EC2D51D2FB11F0003D129 /* User.swift in Sources */,
+				220EC2DB1D2FBB6C0003D129 /* Place.swift in Sources */,
+				220EC2DD1D2FBB7C0003D129 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

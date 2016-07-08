@@ -10,18 +10,22 @@ import Foundation
 
 class Listing: NSObject {
     var uid: String
-    var placeName: String
-    var placeAddress: String
+    var place: String
+    var city: String
+    var user: String
     var listingDescription: String
+    var days: [String: Bool]
     
-    init(uid: String, place: String, address: String, description: String) {
+    init(uid: String, place: String, city: String, user: String, description: String, days: [String: Bool]) {
         self.uid = uid
-        self.placeName = place
-        self.placeAddress = address
+        self.place = place
+        self.city = city
+        self.user = user
         self.listingDescription = description
+        self.days = days
     }
     
     convenience override init() {
-        self.init(uid: "", place: "", address: "", description: "")
+        self.init(uid: "", place: "", city: "", user: "", description: "", days: [:])
     }
 }
