@@ -8,8 +8,20 @@
 
 import Foundation
 
-struct Listing {
+class Listing: NSObject {
+    var uid: String
     var placeName: String
     var placeAddress: String
     var listingDescription: String
+    
+    init(uid: String, place: String, address: String, description: String) {
+        self.uid = uid
+        self.placeName = place
+        self.placeAddress = address
+        self.listingDescription = description
+    }
+    
+    convenience override init() {
+        self.init(uid: "", place: "", address: "", description: "")
+    }
 }
