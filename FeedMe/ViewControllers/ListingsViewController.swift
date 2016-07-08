@@ -26,7 +26,7 @@ class ListingsViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         for i in 1...10 {
-            let listing = Listing(placeName: "Location \(i)", placeAddress: "123 Test Street - Houston, TX", listingDescription: "Half off \(state == .Food ? "burgers" : "drinks") from 3-6 PM.")
+            let listing = Listing(uid: "", place: "Location \(i)", address: "123 Test Street - Houston, TX", description: "Half off \(state == .Food ? "burgers" : "drinks") from 3-6 PM.")
             listings.append(listing)
         }
     }
