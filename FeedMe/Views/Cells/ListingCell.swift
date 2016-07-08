@@ -9,6 +9,12 @@
 import UIKit
 
 class ListingCell: UITableViewCell {
+    
+    @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var placeName: UILabel!
+    @IBOutlet weak var placeAddress: UILabel!
+    @IBOutlet weak var listingDescription: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +27,9 @@ class ListingCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configure(listing: Listing) {
+        self.placeName.text = listing.placeName
+        self.placeAddress.text = listing.placeAddress
+        self.listingDescription.text = listing.listingDescription
+    }
 }
