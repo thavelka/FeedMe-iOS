@@ -12,45 +12,34 @@ import FirebaseDatabaseUI
 
 class ListingsViewController: UIViewController {
     
-    var ref: FIRDatabaseReference!
-    var dataSource: FirebaseTableViewDataSource?
-    
     enum State {
         case Food, Drinks, Favorites
     }
     
-    @IBOutlet weak var tableView: UITableView!
     var listings = [Listing]()
     var state: State?
+    var ref: FIRDatabaseReference!
+    var handle: UInt = 0
+    
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-        
-        let query = (ref?.child("listings").queryLimitedToFirst(100))!
-        
-        dataSource = FirebaseTableViewDataSource.init(query: query, modelClass: Listing.self, prototypeReuseIdentifier: "ListingCell", view: self.tableView)
-        
-        dataSource?.populateCellWithBlock(){
-            let cell = $0 as! ListingCell
-            let listing = $1 as! Listing
-            
-            self.ref.child("places").child(listing.placeId).observeSingleEventOfType(.Value, withBlock: {
-                snapshot in
-                print(snapshot.value)
-                let place = Place(id: listing.placeId, values: snapshot.value! as! [String : AnyObject])
-                cell.placeName.text = place.name
-                cell.placeAddress.text = place.address
-            })
-            cell.listingDescription.text = listing.listingDescription
-        }
-        
-        tableView.dataSource = dataSource
-        tableView.delegate = self
+        listings.removeAll()
+        handle = self.ref.child("listings").observeEventType(.ChildAdded, withBlock: {
+            snapshot in
+            self.listings.append(Listing(id: snapshot.key, values: snapshot.value as! [String: AnyObject]))
+            self.tableView.reloadData()
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
+        tableView.reloadData()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        ref.removeObserverWithHandle(self.handle)
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,5 +64,29 @@ extension ListingsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80
+    }
+}
+
+extension ListingsViewController: UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listings.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListingCell", forIndexPath: indexPath) as! ListingCell
+        configureCell(cell, atIndexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(cell: ListingCell, atIndexPath indexPath: NSIndexPath) {
+        let listing = listings[indexPath.row]
+        self.ref.child("places").child(listing.placeId).observeSingleEventOfType(.Value, withBlock: {
+            snapshot in
+            let place = Place(id: listing.placeId, values: snapshot.value! as! [String : AnyObject])
+            cell.placeName.text = place.name
+            cell.placeAddress.text = place.address
+        })
+        cell.listingDescription.text = listing.listingDescription
     }
 }
