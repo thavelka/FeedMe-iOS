@@ -9,16 +9,27 @@
 import Foundation
 
 class User: NSObject {
+    var id: String
     var name: String
-    var city: String
+    var email: String
+    var cityId: String
     var favorites: [String: Bool]?
     
-    init(name: String, city: String) {
+    init(id: String, name: String, email: String, cityId: String) {
+        self.id = id
         self.name = name
-        self.city = city
+        self.email = email
+        self.cityId = cityId
+    }
+    
+    init(id: String, values: [String: AnyObject]) {
+        self.id = id
+        self.name = values["name"] as? String ?? ""
+        self.email = values["email"] as? String ?? ""
+        self.cityId = values["cityId"] as? String ?? ""
     }
     
     convenience override init() {
-        self.init(name: "", city: "")
+        self.init(id: "", name: "", email: "", cityId: "")
     }
 }

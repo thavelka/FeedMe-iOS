@@ -58,6 +58,7 @@ extension ListingsViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension ListingsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

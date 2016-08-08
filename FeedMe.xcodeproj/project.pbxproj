@@ -21,11 +21,12 @@
 		22DB41961D2F5C70002B6A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DB41941D2F5C70002B6A8D /* Main.storyboard */; };
 		22DB41981D2F5F35002B6A8D /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */; };
 		22DB419C1D2F605A002B6A8D /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB419B1D2F605A002B6A8D /* ListingCell.swift */; };
+		22F3B8801D302D6C00993D49 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F3B87F1D302D6C00993D49 /* SignInViewController.swift */; };
 		4F794DA81FD435969A5D0FF3 /* Pods_FeedMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4CE8F3F21854C1EA3B21F9B /* Pods_FeedMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FeedMe/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		220645FC1D2F93E1001D1F4C /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listing.swift; path = Models/Listing.swift; sourceTree = "<group>"; };
 		220645FE1D2F99AD001D1F4C /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
 		220EC2D81D2FBAE00003D129 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Models/City.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		22DB41951D2F5C70002B6A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsViewController.swift; path = ViewControllers/ListingsViewController.swift; sourceTree = "<group>"; };
 		22DB419B1D2F605A002B6A8D /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingCell.swift; path = Views/Cells/ListingCell.swift; sourceTree = "<group>"; };
+		22F3B87F1D302D6C00993D49 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
 		81F2ABA27DB84E290E523C91 /* Pods-FeedMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeedMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-FeedMe/Pods-FeedMe.release.xcconfig"; sourceTree = "<group>"; };
 		C5FFCFBA467EC7213BF2375C /* Pods-FeedMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeedMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FeedMe/Pods-FeedMe.debug.xcconfig"; sourceTree = "<group>"; };
 		D4CE8F3F21854C1EA3B21F9B /* Pods_FeedMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FeedMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +71,6 @@
 		225815021D2F274A00F926E4 = {
 			isa = PBXGroup;
 			children = (
-				220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */,
 				2258150D1D2F274B00F926E4 /* FeedMe */,
 				2258150C1D2F274B00F926E4 /* Products */,
 				4AA77FA675C019A418E845BF /* Pods */,
@@ -96,6 +97,7 @@
 				2258150E1D2F274B00F926E4 /* AppDelegate.swift */,
 				225815151D2F274B00F926E4 /* Assets.xcassets */,
 				2258151A1D2F274B00F926E4 /* Info.plist */,
+				220645F91D2F84DB001D1F4C /* GoogleService-Info.plist */,
 			);
 			path = FeedMe;
 			sourceTree = "<group>";
@@ -121,6 +123,7 @@
 		22852D9F1D2F569200AEAF46 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				22F3B87E1D302D3900993D49 /* Sign In */,
 				220EC2D11D2FAE190003D129 /* Listings */,
 				22852DA01D2F572300AEAF46 /* DispatchViewController.swift */,
 				220645FE1D2F99AD001D1F4C /* TabBarController.swift */,
@@ -152,6 +155,14 @@
 				22DB419B1D2F605A002B6A8D /* ListingCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		22F3B87E1D302D3900993D49 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				22F3B87F1D302D6C00993D49 /* SignInViewController.swift */,
+			);
+			name = "Sign In";
 			sourceTree = "<group>";
 		};
 		4AA77FA675C019A418E845BF /* Pods */ = {
@@ -304,6 +315,7 @@
 				22852DA11D2F572300AEAF46 /* DispatchViewController.swift in Sources */,
 				22DB41981D2F5F35002B6A8D /* ListingsViewController.swift in Sources */,
 				220EC2DB1D2FBB6C0003D129 /* Place.swift in Sources */,
+				22F3B8801D302D6C00993D49 /* SignInViewController.swift in Sources */,
 				220EC2DD1D2FBB7C0003D129 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

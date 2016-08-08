@@ -7,25 +7,59 @@
 //
 
 import Foundation
+import Firebase
 
 class Listing: NSObject {
-    var uid: String
-    var place: String
-    var city: String
-    var user: String
+    
+    var id: String
+    var userId: String
+    var placeId: String
+    var cityId: String
+    var type: String
     var listingDescription: String
     var days: [String: Bool]
     
-    init(uid: String, place: String, city: String, user: String, description: String, days: [String: Bool]) {
-        self.uid = uid
-        self.place = place
-        self.city = city
-        self.user = user
+    init(id: String, userId: String, placeId: String, cityId: String, type: String, description: String, days: [String: Bool]) {
+        self.id = id
+        self.userId = userId
+        self.placeId = placeId
+        self.cityId = cityId
+        self.type = type
         self.listingDescription = description
         self.days = days
     }
     
+    init(id: String, values: [String: AnyObject]) {
+        self.id = id
+        self.userId = values["userId"] as? String ?? ""
+        self.placeId = values["placeId"] as? String ?? ""
+        self.cityId = values["cityId"] as? String ?? ""
+        self.type = values["type"] as? String ?? ""
+        self.listingDescription = values["description"] as? String ?? ""
+        self.days = values["days"] as? [String: Bool] ?? [:]
+    }
+    
     convenience override init() {
-        self.init(uid: "", place: "", city: "", user: "", description: "", days: [:])
+        self.init(id: "", userId: "", placeId: "", cityId: "", type: "", description: "", days: [:])
+    }
+    
+    func getValues() -> [String: [String: AnyObject]] {
+        var values = [String: AnyObject]()
+        values["userId"] = self.userId
+        values["placeId"] = self.placeId
+        values["cityId"] = self.cityId
+        values["type"] = self.type
+        values["description"] = self.listingDescription
+        values["days"] = self.days
+        
+        return ["listings/\(self.id)": values]
+    }
+    
+    func save() {
+        let ref = FIRDatabase.database().reference()
+        if self.id.isEmpty {
+            self.id = ref.child("listings").childByAutoId().key
+        }
+        ref.updateChildValues(self.getValues())
     }
 }
