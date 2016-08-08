@@ -11,7 +11,7 @@ import Firebase
 
 class Listing: NSObject {
     
-    var id: String
+    var id: String = ""
     var userId: String
     var placeId: String
     var cityId: String
@@ -19,8 +19,7 @@ class Listing: NSObject {
     var listingDescription: String
     var days: [String: Bool]
     
-    init(id: String, userId: String, placeId: String, cityId: String, type: String, description: String, days: [String: Bool]) {
-        self.id = id
+    init(userId: String, placeId: String, cityId: String, type: String, description: String, days: [String: Bool]) {
         self.userId = userId
         self.placeId = placeId
         self.cityId = cityId
@@ -40,7 +39,7 @@ class Listing: NSObject {
     }
     
     convenience override init() {
-        self.init(id: "", userId: "", placeId: "", cityId: "", type: "", description: "", days: [:])
+        self.init(userId: "", placeId: "", cityId: "", type: "", description: "", days: [:])
     }
     
     func getValues() -> [String: [String: AnyObject]] {

@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabaseUI
 
 class ListingsViewController: UIViewController {
+    
+    var ref: FIRDatabaseReference!
+    var dataSource: FirebaseTableViewDataSource?
     
     enum State {
         case Food, Drinks, Favorites
@@ -20,12 +25,32 @@ class ListingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ref = FIRDatabase.database().reference()
+        
+        let query = (ref?.child("listings").queryLimitedToFirst(100))!
+        
+        dataSource = FirebaseTableViewDataSource.init(query: query, modelClass: Listing.self, prototypeReuseIdentifier: "ListingCell", view: self.tableView)
+        
+        dataSource?.populateCellWithBlock(){
+            let cell = $0 as! ListingCell
+            let listing = $1 as! Listing
+            
+            self.ref.child("places").child(listing.placeId).observeSingleEventOfType(.Value, withBlock: {
+                snapshot in
+                print(snapshot.value)
+                let place = Place(id: listing.placeId, values: snapshot.value! as! [String : AnyObject])
+                cell.placeName.text = place.name
+                cell.placeAddress.text = place.address
+            })
+            cell.listingDescription.text = listing.listingDescription
+        }
+        
+        tableView.dataSource = dataSource
+        tableView.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
-
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,19 +68,6 @@ class ListingsViewController: UIViewController {
     }
     */
 
-}
-
-// MARK: - UITableViewDataSource
-extension ListingsViewController: UITableViewDataSource {
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListingCell", forIndexPath: indexPath) as! ListingCell
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
 }
 
 // MARK: - UITableViewDelegate
