@@ -10,4 +10,6 @@ target 'FeedMe' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'FirebaseUI'
+  pod 'AlamofireImage', '~> 2.0'
+  
 end

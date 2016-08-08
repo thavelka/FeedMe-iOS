@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabaseUI
+import AlamofireImage
 
 class ListingsViewController: UIViewController {
     
@@ -86,6 +87,10 @@ extension ListingsViewController: UITableViewDataSource {
             let place = Place(id: listing.placeId, values: snapshot.value! as! [String : AnyObject])
             cell.placeName.text = place.name
             cell.placeAddress.text = place.address
+            if let imageUrl = NSURL(string: place.imageUrl) {
+                let filter = AspectScaledToFillSizeCircleFilter(size: cell.placeImage.frame.size)
+                cell.placeImage.af_setImageWithURL(imageUrl, placeholderImage: nil, filter: filter)
+            }
         })
         cell.listingDescription.text = listing.listingDescription
     }
