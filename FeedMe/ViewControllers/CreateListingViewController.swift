@@ -28,6 +28,9 @@ class CreateListingViewController: UIViewController {
     @IBOutlet weak var thursdayButton: UIButton!
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
+    @IBOutlet weak var descriptionWarning: UILabel!
+    @IBOutlet weak var dayWarning: UILabel!
+    
     
     @IBAction func touchedSundayButton(sender: AnyObject) {
         toggleButton(sundayButton, day: .Sunday)
@@ -51,9 +54,15 @@ class CreateListingViewController: UIViewController {
         toggleButton(saturdayButton, day: .Saturday)
     }
     @IBAction func submitButton(sender: AnyObject) {
+        let hasDescription = descriptionField.text.characters.count > 0
+        let hasDays = days.values.contains({$0})
+        descriptionWarning.hidden = hasDescription
+        dayWarning.hidden = hasDays
+        guard hasDescription && hasDays else {
+            return
+        }
         createListing()
-        navigationController?.popViewControllerAnimated(true)
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     var ref: FIRDatabaseReference!
@@ -77,15 +86,13 @@ class CreateListingViewController: UIViewController {
     
     func createListing() {
         let listing = Listing()
-        listing.id = ref.child("listings").childByAutoId().key
         listing.userId = FIRAuth.auth()?.currentUser?.uid ?? ""
         listing.placeId = place?.id ?? ""
         listing.cityId = place?.cityId ?? ""
         listing.listingDescription = descriptionField.text
         listing.type = listingTypeSegment.selectedSegmentIndex == 0 ? .Food : .Drink
         listing.days = self.days
-        let updates = listing.getValues()
-        self.ref.updateChildValues(updates)
+        listing.save()
     }
     
     func toggleButton(button: UIButton, day: Day) {
@@ -93,5 +100,26 @@ class CreateListingViewController: UIViewController {
         let selected = !(self.days[dayString] ?? false)
         self.days[dayString] = selected
         button.setTitleColor((selected ? UIColor.blueColor() : UIColor.lightGrayColor()), forState: .Normal)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        // Dismiss keyboard if user touched outside of text field
+        descriptionField.resignFirstResponder()
+    }
+}
+
+extension CreateListingViewController: UITextViewDelegate {
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        // If return key pressed, dismiss keyboard
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        
+        // Allow edit if char count < 256
+        let newText = (textView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
+        return newText.characters.count < 256
     }
 }

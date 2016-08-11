@@ -248,50 +248,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ye-fa-Byb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="173"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ye-fa-Byb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="213"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_blk_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="jud-iI-cQc">
-                                <rect key="frame" x="0.0" y="149" width="375" height="88"/>
+                                <rect key="frame" x="0.0" y="189" width="375" height="88"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-bJ-gzu">
-                                <rect key="frame" x="12" y="190" width="335" height="21"/>
+                                <rect key="frame" x="12" y="222" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1111 Example Address St." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBi-Iq-wKD">
-                                <rect key="frame" x="12" y="210" width="355" height="21"/>
+                                <rect key="frame" x="12" y="242" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PYV-S2-X5i">
-                                <rect key="frame" x="12" y="275" width="355" height="102"/>
+                                <rect key="frame" x="12" y="320" width="355" height="102"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DRN-ll-Ljv" id="G5A-A1-eSx"/>
+                                </connections>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPy-6x-6Qq">
-                                <rect key="frame" x="12" y="245" width="88" height="21"/>
+                                <rect key="frame" x="12" y="290" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.38431373238563538" green="0.38431373238563538" blue="0.38431373238563538" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a description" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6l-Ua-QNg">
+                                <rect key="frame" x="235" y="290" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.94509804248809814" green="0.15686275064945221" blue="0.12941177189350128" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5k-bY-21R">
-                                <rect key="frame" x="12" y="395" width="88" height="21"/>
+                                <rect key="frame" x="12" y="445" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.3843137324" green="0.3843137324" blue="0.3843137324" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmS-Yt-m7f">
-                                <rect key="frame" x="12" y="471" width="88" height="21"/>
+                                <rect key="frame" x="12" y="526" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.3843137324" green="0.3843137324" blue="0.3843137324" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVR-LV-fA3">
-                                <rect key="frame" x="16" y="424" width="46" height="30"/>
+                                <rect key="frame" x="16" y="474" width="46" height="30"/>
                                 <state key="normal" title="Sun">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -300,7 +309,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-t2-4FG">
-                                <rect key="frame" x="66" y="424" width="46" height="30"/>
+                                <rect key="frame" x="66" y="474" width="46" height="30"/>
                                 <state key="normal" title="Mon">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -309,7 +318,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJh-uQ-kV0">
-                                <rect key="frame" x="116" y="424" width="46" height="30"/>
+                                <rect key="frame" x="116" y="474" width="46" height="30"/>
                                 <state key="normal" title="Tue">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -318,7 +327,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5f-YR-6xx">
-                                <rect key="frame" x="166" y="424" width="46" height="30"/>
+                                <rect key="frame" x="166" y="474" width="46" height="30"/>
                                 <state key="normal" title="Wed">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -327,7 +336,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haf-Oc-mYW">
-                                <rect key="frame" x="216" y="424" width="46" height="30"/>
+                                <rect key="frame" x="216" y="474" width="46" height="30"/>
                                 <state key="normal" title="Thu">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -336,7 +345,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ny-DH-8ax">
-                                <rect key="frame" x="266" y="424" width="46" height="30"/>
+                                <rect key="frame" x="266" y="474" width="46" height="30"/>
                                 <state key="normal" title="Fri">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -345,7 +354,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-1r-7vG">
-                                <rect key="frame" x="316" y="424" width="46" height="30"/>
+                                <rect key="frame" x="316" y="474" width="46" height="30"/>
                                 <state key="normal" title="Sat">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -354,25 +363,33 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-FL-NRH">
-                                <rect key="frame" x="66" y="500" width="246" height="29"/>
+                                <rect key="frame" x="66" y="555" width="246" height="29"/>
                                 <segments>
                                     <segment title="Food"/>
                                     <segment title="Drinks"/>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySN-UD-Ygn">
-                                <rect key="frame" x="66" y="580" width="246" height="30"/>
+                                <rect key="frame" x="66" y="615" width="246" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="efc-5n-Flg"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYq-jO-ngW">
+                                <rect key="frame" x="284" y="445" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.94509804249999996" green="0.15686275059999999" blue="0.1294117719" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dayWarning" destination="SYq-jO-ngW" id="Rgr-W9-g0E"/>
                         <outlet property="descriptionField" destination="PYV-S2-X5i" id="uk5-Ba-iRO"/>
+                        <outlet property="descriptionWarning" destination="n6l-Ua-QNg" id="ORU-jp-yBv"/>
                         <outlet property="fridayButton" destination="0Ny-DH-8ax" id="Y0X-Ja-wJd"/>
                         <outlet property="listingTypeSegment" destination="3Vd-FL-NRH" id="36I-jE-SFn"/>
                         <outlet property="mondayButton" destination="fLk-t2-4FG" id="7h7-5A-Vqr"/>
