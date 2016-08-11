@@ -1,20 +1,19 @@
 //
-//  ListingCell.swift
+//  PlaceCell.swift
 //  FeedMe
 //
-//  Created by Tim Havelka on 7/7/16.
+//  Created by Tim Havelka on 8/11/16.
 //  Copyright © 2016 Tim Havelka. All rights reserved.
 //
 
 import UIKit
 import AlamofireImage
 
-class ListingCell: UITableViewCell {
+class PlaceCell: UITableViewCell {
     
     @IBOutlet weak var placeImage: UIImageView!
-    @IBOutlet weak var placeName: UILabel!
-    @IBOutlet weak var placeAddress: UILabel!
-    @IBOutlet weak var listingDescription: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
 
     override func awakeFromNib() {
@@ -27,14 +26,14 @@ class ListingCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    func configure(place: Place, listing: Listing) {
-        self.listingDescription.text = listing.listingDescription
-        self.placeName.text = place.name
-        self.placeAddress.text = place.address
+    
+    func configure(place: Place) {
+        self.nameLabel.text = place.name
+        self.addressLabel.text = place.address
         if let imageUrl = NSURL(string: place.imageUrl) {
             let filter = AspectScaledToFillSizeCircleFilter(size: self.placeImage.frame.size)
             self.placeImage.af_setImageWithURL(imageUrl, placeholderImage: nil, filter: filter)
         }
     }
+
 }

@@ -67,7 +67,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Food" id="1UM-Vi-vTO"/>
+                    <navigationItem key="navigationItem" title="Food" id="1UM-Vi-vTO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4Hb-9h-Jpw">
+                            <connections>
+                                <segue destination="xXV-OX-hna" kind="show" id="euC-yh-vmD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="hYQ-Z1-BRT" id="QRI-tt-16q"/>
@@ -75,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMx-Tv-3Iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468.5" y="-116.5"/>
+            <point key="canvasLocation" x="456.5" y="-108.5"/>
         </scene>
         <!--Drinks-->
         <scene sceneID="DUp-jx-j0Z">
@@ -139,7 +145,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Drinks" id="liC-dr-4ds"/>
+                    <navigationItem key="navigationItem" title="Drinks" id="liC-dr-4ds">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SFu-ca-8n4">
+                            <connections>
+                                <segue destination="xXV-OX-hna" kind="show" id="omY-qZ-G29"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="aRm-sB-rgY" id="9G0-iQ-VgD"/>
@@ -147,7 +159,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9y-Yq-APN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="468.5" y="659.5"/>
+            <point key="canvasLocation" x="456.5" y="659.5"/>
+        </scene>
+        <!--Select Place-->
+        <scene sceneID="bOg-0i-W0x">
+            <objects>
+                <viewController title="Select Place" id="xXV-OX-hna" customClass="SelectPlaceViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vw5-re-hRc"/>
+                        <viewControllerLayoutGuide type="bottom" id="prK-wM-eIe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wjz-Re-5Kw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Llh-Sh-Ily">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xXV-OX-hna" id="zXy-sM-67N"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HBs-7Q-u2m">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlaceCell" rowHeight="64" id="dpj-5o-Bmx" customClass="PlaceCell" customModule="FeedMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dpj-5o-Bmx" id="xjn-vV-FBH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OEd-TK-kyc">
+                                                    <rect key="frame" x="8" y="4" width="48" height="48"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDk-B7-kfP">
+                                                    <rect key="frame" x="64" y="8" width="303" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1111 Address St." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-Xq-Ube">
+                                                    <rect key="frame" x="64" y="31" width="303" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="gkL-Xq-Ube" id="kfe-pQ-Xop"/>
+                                            <outlet property="nameLabel" destination="dDk-B7-kfP" id="Mvz-PA-npf"/>
+                                            <outlet property="placeImage" destination="OEd-TK-kyc" id="IHf-lg-XXa"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="xXV-OX-hna" id="Kqs-MY-4rc"/>
+                                    <outlet property="delegate" destination="xXV-OX-hna" id="TPp-sW-kLP"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Llh-Sh-Ily" id="Ai5-Pk-ZnN"/>
+                        <outlet property="tableView" destination="HBs-7Q-u2m" id="nDI-I2-gcP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbv-uZ-Dk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233.5" y="279.5"/>
         </scene>
         <!--Food-->
         <scene sceneID="MmC-dy-afK">
@@ -209,4 +293,7 @@
             <point key="canvasLocation" x="-840" y="247"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="omY-qZ-G29"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,8 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabaseUI
-import AlamofireImage
 
 class ListingsViewController: UIViewController {
     
@@ -48,15 +46,10 @@ class ListingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destinationViewController
+        destination.hidesBottomBarWhenPushed = true
     }
-    */
 
 }
 
@@ -68,6 +61,7 @@ extension ListingsViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ListingsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,13 +79,7 @@ extension ListingsViewController: UITableViewDataSource {
         self.ref.child("places").child(listing.placeId).observeSingleEventOfType(.Value, withBlock: {
             snapshot in
             let place = Place(id: listing.placeId, values: snapshot.value! as! [String : AnyObject])
-            cell.placeName.text = place.name
-            cell.placeAddress.text = place.address
-            if let imageUrl = NSURL(string: place.imageUrl) {
-                let filter = AspectScaledToFillSizeCircleFilter(size: cell.placeImage.frame.size)
-                cell.placeImage.af_setImageWithURL(imageUrl, placeholderImage: nil, filter: filter)
-            }
+            cell.configure(place, listing: listing)
         })
-        cell.listingDescription.text = listing.listingDescription
     }
 }

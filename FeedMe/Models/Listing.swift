@@ -11,19 +11,25 @@ import Firebase
 
 class Listing: NSObject {
     
-    var id: String = ""
+    enum Type: String {
+        case Food = "food"
+        case Drink = "drink"
+    }
+    
+    var id: String
     var userId: String
     var placeId: String
     var cityId: String
-    var type: String
+    var type: Type?
     var listingDescription: String
     var days: [String: Bool]
     
-    init(userId: String, placeId: String, cityId: String, type: String, description: String, days: [String: Bool]) {
+    init(id: String, userId: String, placeId: String, cityId: String, type: String, description: String, days: [String: Bool]) {
+        self.id = id
         self.userId = userId
         self.placeId = placeId
         self.cityId = cityId
-        self.type = type
+        self.type = Type(rawValue: type)
         self.listingDescription = description
         self.days = days
     }
@@ -33,13 +39,13 @@ class Listing: NSObject {
         self.userId = values["userId"] as? String ?? ""
         self.placeId = values["placeId"] as? String ?? ""
         self.cityId = values["cityId"] as? String ?? ""
-        self.type = values["type"] as? String ?? ""
+        self.type = Type(rawValue: values["type"] as? String ?? "")
         self.listingDescription = values["description"] as? String ?? ""
         self.days = values["days"] as? [String: Bool] ?? [:]
     }
     
     convenience override init() {
-        self.init(userId: "", placeId: "", cityId: "", type: "", description: "", days: [:])
+        self.init(id: "", userId: "", placeId: "", cityId: "", type: "", description: "", days: [:])
     }
     
     func getValues() -> [String: [String: AnyObject]] {
@@ -47,7 +53,7 @@ class Listing: NSObject {
         values["userId"] = self.userId
         values["placeId"] = self.placeId
         values["cityId"] = self.cityId
-        values["type"] = self.type
+        values["type"] = self.type?.rawValue
         values["description"] = self.listingDescription
         values["days"] = self.days
         
