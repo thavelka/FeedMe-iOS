@@ -227,11 +227,166 @@
                     <connections>
                         <outlet property="searchBar" destination="Llh-Sh-Ily" id="Ai5-Pk-ZnN"/>
                         <outlet property="tableView" destination="HBs-7Q-u2m" id="nDI-I2-gcP"/>
+                        <segue destination="DRN-ll-Ljv" kind="show" identifier="createListingSegue" id="3k1-1v-7br"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbv-uZ-Dk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1233.5" y="279.5"/>
+            <point key="canvasLocation" x="1040.5" y="246.5"/>
+        </scene>
+        <!--Create Listing-->
+        <scene sceneID="FN6-uh-fhL">
+            <objects>
+                <viewController title="Create Listing" id="DRN-ll-Ljv" customClass="CreateListingViewController" customModule="FeedMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kYe-Qh-bfw"/>
+                        <viewControllerLayoutGuide type="bottom" id="NHd-cw-eaF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JsE-Sz-KAO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ye-fa-Byb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="173"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_blk_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="jud-iI-cQc">
+                                <rect key="frame" x="0.0" y="149" width="375" height="88"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUy-bJ-gzu">
+                                <rect key="frame" x="12" y="190" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1111 Example Address St." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBi-Iq-wKD">
+                                <rect key="frame" x="12" y="210" width="355" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PYV-S2-X5i">
+                                <rect key="frame" x="12" y="275" width="355" height="102"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPy-6x-6Qq">
+                                <rect key="frame" x="12" y="245" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.38431373238563538" green="0.38431373238563538" blue="0.38431373238563538" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5k-bY-21R">
+                                <rect key="frame" x="12" y="395" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.3843137324" green="0.3843137324" blue="0.3843137324" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmS-Yt-m7f">
+                                <rect key="frame" x="12" y="471" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.3843137324" green="0.3843137324" blue="0.3843137324" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVR-LV-fA3">
+                                <rect key="frame" x="16" y="424" width="46" height="30"/>
+                                <state key="normal" title="Sun">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedSundayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="bWA-0g-8He"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-t2-4FG">
+                                <rect key="frame" x="66" y="424" width="46" height="30"/>
+                                <state key="normal" title="Mon">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedMondayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="BFQ-Ic-PzE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJh-uQ-kV0">
+                                <rect key="frame" x="116" y="424" width="46" height="30"/>
+                                <state key="normal" title="Tue">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedTuesdayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="0Tu-10-ADI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5f-YR-6xx">
+                                <rect key="frame" x="166" y="424" width="46" height="30"/>
+                                <state key="normal" title="Wed">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedWednesdayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="X9P-rX-3X5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Haf-Oc-mYW">
+                                <rect key="frame" x="216" y="424" width="46" height="30"/>
+                                <state key="normal" title="Thu">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedThursdayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="rFb-O6-hQR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ny-DH-8ax">
+                                <rect key="frame" x="266" y="424" width="46" height="30"/>
+                                <state key="normal" title="Fri">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedFridayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="Ecc-Lh-j8U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxK-1r-7vG">
+                                <rect key="frame" x="316" y="424" width="46" height="30"/>
+                                <state key="normal" title="Sat">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedSaturdayButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="zyS-H4-Nf8"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-FL-NRH">
+                                <rect key="frame" x="66" y="500" width="246" height="29"/>
+                                <segments>
+                                    <segment title="Food"/>
+                                    <segment title="Drinks"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySN-UD-Ygn">
+                                <rect key="frame" x="66" y="580" width="246" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButton:" destination="DRN-ll-Ljv" eventType="touchUpInside" id="efc-5n-Flg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descriptionField" destination="PYV-S2-X5i" id="uk5-Ba-iRO"/>
+                        <outlet property="fridayButton" destination="0Ny-DH-8ax" id="Y0X-Ja-wJd"/>
+                        <outlet property="listingTypeSegment" destination="3Vd-FL-NRH" id="36I-jE-SFn"/>
+                        <outlet property="mondayButton" destination="fLk-t2-4FG" id="7h7-5A-Vqr"/>
+                        <outlet property="placeAddress" destination="VBi-Iq-wKD" id="tSu-hQ-8bI"/>
+                        <outlet property="placeImage" destination="6ye-fa-Byb" id="Zmk-gi-h9m"/>
+                        <outlet property="placeName" destination="QUy-bJ-gzu" id="xU3-Fx-w2H"/>
+                        <outlet property="saturdayButton" destination="PxK-1r-7vG" id="DBt-ao-uRB"/>
+                        <outlet property="sundayButton" destination="zVR-LV-fA3" id="NhP-Eg-B85"/>
+                        <outlet property="thursdayButton" destination="Haf-Oc-mYW" id="ZQy-zT-nC7"/>
+                        <outlet property="tuesdayButton" destination="CJh-uQ-kV0" id="VhI-bM-rZI"/>
+                        <outlet property="wednesdayButton" destination="C5f-YR-6xx" id="paX-Be-nxC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSN-od-iPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1529.5" y="246.5"/>
         </scene>
         <!--Food-->
         <scene sceneID="MmC-dy-afK">
@@ -293,6 +448,9 @@
             <point key="canvasLocation" x="-840" y="247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_blk_gradient" width="1024" height="400"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="omY-qZ-G29"/>
     </inferredMetricsTieBreakers>

@@ -17,7 +17,7 @@ class SelectPlaceViewController: UIViewController {
     var searchText: String = ""
     var filteredPlaces: [Place] {
         if !searchText.isEmpty {
-            return places.filter({$0.name.containsString(searchText)})
+            return places.filter(){$0.name.localizedCaseInsensitiveContainsString(searchText)}
         } else {
             return places
         }
@@ -32,7 +32,6 @@ class SelectPlaceViewController: UIViewController {
         places.removeAll()
         handle = self.ref.child("places").observeEventType(.ChildAdded, withBlock: {
             snapshot in
-            print(snapshot.value)
             self.places.append(Place(id: snapshot.key, values: snapshot.value as! [String: AnyObject]))
             self.tableView.reloadData()
         })
@@ -51,6 +50,13 @@ class SelectPlaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "createListingSegue", let place = sender as? Place {
+            let destination = segue.destinationViewController as! CreateListingViewController
+            destination.place = place
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -58,6 +64,12 @@ extension SelectPlaceViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 64
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        guard filteredPlaces.count > 0 else { return }
+        let place = filteredPlaces[indexPath.row]
+        self.performSegueWithIdentifier("createListingSegue", sender: place)
     }
 }
 
@@ -75,6 +87,7 @@ extension SelectPlaceViewController: UITableViewDataSource {
     }
     
     func configureCell(cell: PlaceCell, atIndexPath indexPath: NSIndexPath) {
+        guard filteredPlaces.count > 0 else { return }
         let place = filteredPlaces[indexPath.row]
         cell.configure(place)
     }

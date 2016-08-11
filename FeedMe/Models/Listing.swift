@@ -11,7 +11,7 @@ import Firebase
 
 class Listing: NSObject {
     
-    enum Type: String {
+    enum ListingType: String {
         case Food = "food"
         case Drink = "drink"
     }
@@ -20,7 +20,7 @@ class Listing: NSObject {
     var userId: String
     var placeId: String
     var cityId: String
-    var type: Type?
+    var type: ListingType?
     var listingDescription: String
     var days: [String: Bool]
     
@@ -29,7 +29,7 @@ class Listing: NSObject {
         self.userId = userId
         self.placeId = placeId
         self.cityId = cityId
-        self.type = Type(rawValue: type)
+        self.type = ListingType(rawValue: type)
         self.listingDescription = description
         self.days = days
     }
@@ -39,7 +39,7 @@ class Listing: NSObject {
         self.userId = values["userId"] as? String ?? ""
         self.placeId = values["placeId"] as? String ?? ""
         self.cityId = values["cityId"] as? String ?? ""
-        self.type = Type(rawValue: values["type"] as? String ?? "")
+        self.type = ListingType(rawValue: values["type"] as? String ?? "")
         self.listingDescription = values["description"] as? String ?? ""
         self.days = values["days"] as? [String: Bool] ?? [:]
     }

@@ -19,6 +19,7 @@
 		225815191D2F274B00F926E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225815171D2F274B00F926E4 /* LaunchScreen.storyboard */; };
 		227F1B4A1D5C589B00A0A6F2 /* SelectPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F1B491D5C589B00A0A6F2 /* SelectPlaceViewController.swift */; };
 		227F1B4C1D5C5BC000A0A6F2 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F1B4B1D5C5BC000A0A6F2 /* PlaceCell.swift */; };
+		227F1B4E1D5C6AFF00A0A6F2 /* CreateListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F1B4D1D5C6AFF00A0A6F2 /* CreateListingViewController.swift */; };
 		22852DA11D2F572300AEAF46 /* DispatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22852DA01D2F572300AEAF46 /* DispatchViewController.swift */; };
 		22DB41961D2F5C70002B6A8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22DB41941D2F5C70002B6A8D /* Main.storyboard */; };
 		22DB41981D2F5F35002B6A8D /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */; };
@@ -42,6 +43,7 @@
 		2258151A1D2F274B00F926E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		227F1B491D5C589B00A0A6F2 /* SelectPlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectPlaceViewController.swift; path = ViewControllers/SelectPlaceViewController.swift; sourceTree = "<group>"; };
 		227F1B4B1D5C5BC000A0A6F2 /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceCell.swift; path = Views/Cells/PlaceCell.swift; sourceTree = "<group>"; };
+		227F1B4D1D5C6AFF00A0A6F2 /* CreateListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateListingViewController.swift; path = ViewControllers/CreateListingViewController.swift; sourceTree = "<group>"; };
 		22852DA01D2F572300AEAF46 /* DispatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DispatchViewController.swift; path = ViewControllers/DispatchViewController.swift; sourceTree = "<group>"; };
 		22DB41951D2F5C70002B6A8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListingsViewController.swift; path = ViewControllers/ListingsViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				22DB41971D2F5F35002B6A8D /* ListingsViewController.swift */,
 				227F1B491D5C589B00A0A6F2 /* SelectPlaceViewController.swift */,
+				227F1B4D1D5C6AFF00A0A6F2 /* CreateListingViewController.swift */,
 			);
 			name = Listings;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				227F1B4A1D5C589B00A0A6F2 /* SelectPlaceViewController.swift in Sources */,
 				22DB419C1D2F605A002B6A8D /* ListingCell.swift in Sources */,
 				220EC2D91D2FBAE00003D129 /* City.swift in Sources */,
+				227F1B4E1D5C6AFF00A0A6F2 /* CreateListingViewController.swift in Sources */,
 				220645FD1D2F93E1001D1F4C /* Listing.swift in Sources */,
 				220645FF1D2F99AD001D1F4C /* TabBarController.swift in Sources */,
 				22852DA11D2F572300AEAF46 /* DispatchViewController.swift in Sources */,
