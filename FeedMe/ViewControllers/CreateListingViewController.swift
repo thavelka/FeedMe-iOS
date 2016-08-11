@@ -12,8 +12,8 @@ import AlamofireImage
 
 class CreateListingViewController: UIViewController {
     
-    enum Day: String {
-        case Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+    enum Day: Int {
+        case Sunday = 1, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
     }
     
     @IBOutlet weak var placeImage: UIImageView!
@@ -56,9 +56,9 @@ class CreateListingViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
     
+    var ref: FIRDatabaseReference!
     var place: Place?
     var days = [String: Bool]()
-    var ref: FIRDatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,12 +84,14 @@ class CreateListingViewController: UIViewController {
         listing.listingDescription = descriptionField.text
         listing.type = listingTypeSegment.selectedSegmentIndex == 0 ? .Food : .Drink
         listing.days = self.days
-        self.ref.updateChildValues(listing.getValues())
+        let updates = listing.getValues()
+        self.ref.updateChildValues(updates)
     }
     
     func toggleButton(button: UIButton, day: Day) {
-        let selected = !(self.days[day.rawValue] ?? false)
-        self.days[day.rawValue] = selected
+        let dayString = String(day.rawValue)
+        let selected = !(self.days[dayString] ?? false)
+        self.days[dayString] = selected
         button.setTitleColor((selected ? UIColor.blueColor() : UIColor.lightGrayColor()), forState: .Normal)
     }
 }

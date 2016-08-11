@@ -11,14 +11,14 @@ import Firebase
 
 class ListingsViewController: UIViewController {
     
-    enum State {
+    enum State: String {
         case Food, Drinks, Favorites
     }
     
-    var listings = [Listing]()
-    var state: State?
     var ref: FIRDatabaseReference!
     var handle: UInt = 0
+    var state: State?
+    var listings = [Listing]()
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -26,14 +26,11 @@ class ListingsViewController: UIViewController {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         listings.removeAll()
-        handle = self.ref.child("listings").observeEventType(.ChildAdded, withBlock: {
-            snapshot in
-            self.listings.append(Listing(id: snapshot.key, values: snapshot.value as! [String: AnyObject]))
-            self.tableView.reloadData()
-        })
+        getListings()
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationItem.title = NSDate().dayOfWeekName()
         tableView.reloadData()
     }
     
@@ -75,11 +72,25 @@ extension ListingsViewController: UITableViewDataSource {
     }
     
     func configureCell(cell: ListingCell, atIndexPath indexPath: NSIndexPath) {
+        guard listings.count > indexPath.row else { return }
         let listing = listings[indexPath.row]
         self.ref.child("places").child(listing.placeId).observeSingleEventOfType(.Value, withBlock: {
             snapshot in
             let place = Place(id: listing.placeId, values: snapshot.value! as! [String : AnyObject])
             cell.configure(place, listing: listing)
+        })
+    }
+    
+    func getListings() {
+        let type: Listing.ListingType = tabBarController?.selectedIndex == 0 
+            ? Listing.ListingType.Food 
+            : Listing.ListingType.Drink
+        let day = String(NSDate().dayOfWeek() ?? 0)
+        handle = self.ref.child("listings").observeEventType(.ChildAdded, withBlock: {
+            snapshot in
+            let listing = Listing(id: snapshot.key, values: snapshot.value as! [String: AnyObject])
+            if listing.type == type && listing.days[day] == true { self.listings.append(listing) }
+            self.tableView.reloadData()
         })
     }
 }

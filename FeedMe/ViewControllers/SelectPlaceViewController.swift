@@ -11,10 +11,10 @@ import Firebase
 
 class SelectPlaceViewController: UIViewController {
     
-    var places = [Place]()
     var ref: FIRDatabaseReference!
     var handle: UInt = 0
     var searchText: String = ""
+    var places = [Place]()
     var filteredPlaces: [Place] {
         if !searchText.isEmpty {
             return places.filter(){$0.name.localizedCaseInsensitiveContainsString(searchText)}

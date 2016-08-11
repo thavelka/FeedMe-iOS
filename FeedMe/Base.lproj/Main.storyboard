@@ -68,6 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Food" id="1UM-Vi-vTO">
+                        <barButtonItem key="backBarButtonItem" title="Food" id="xS8-zw-QjG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4Hb-9h-Jpw">
                             <connections>
                                 <segue destination="xXV-OX-hna" kind="show" id="euC-yh-vmD"/>
@@ -146,6 +147,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Drinks" id="liC-dr-4ds">
+                        <barButtonItem key="backBarButtonItem" title="Drinks" id="4x2-M0-5de"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SFu-ca-8n4">
                             <connections>
                                 <segue destination="xXV-OX-hna" kind="show" id="omY-qZ-G29"/>
@@ -452,6 +454,6 @@
         <image name="bg_blk_gradient" width="1024" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="omY-qZ-G29"/>
+        <segue reference="euC-yh-vmD"/>
     </inferredMetricsTieBreakers>
 </document>
